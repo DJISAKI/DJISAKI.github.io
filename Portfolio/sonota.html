@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+
+<html　lang="ja">
+	<head>
+		<title>その他制作物 -地崎滉平のポートフォリオ-</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+        <!-- Scripts -->
+            <script type="text/javascript"src="assets/js/jquery.min.js"></script>
+
+						<script>
+							$(document).ready(function() {
+  							var pagetop = $('.page-top');
+    					$(window).scroll(function () {
+       					if ($(this).scrollTop() > 100) {
+            	pagetop.fadeIn();
+       					} else {
+            	pagetop.fadeOut();
+            		}
+       			});
+       				pagetop.click(function () {
+           			$('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   						});
+							});
+						</script>
+
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+
+
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="title">地崎滉平 -Jisaki Kouhei-</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+
+				<!-- Menu -->
+						<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">Profile</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<h1>その他制作物</h1>
+							<p>私地崎滉平が実験的に制作した制作物をご紹介します。</p>
+							<h1>Processing</h1>
+							<span class="image fit"><img src="images/1234.jpg" alt="" /></span>
+							<p>
+								ProccesingというJavaを元にした言語を用い、プログラミングアートを制作しました。プログラムを実行するたびに"1","2","3","4"の周りにある１～４のカラフルな数字が色・位置がランダムに配置されます。
+								この作品は１～４のそれぞれのプログラム実行結果を画像として書き出し、コラージュしたものです。
+							</p>
+							<span class="image fit"><img src="images/window.jpg" alt="" /></span>
+							<p>
+								同じくProccesingを用いたプログラミングアートです。プログラムを実行するたびに”C”という文字の開き具合、色がランダムに生成され描画される作品です。
+							以下が、このプログラミングアートのソースコードです。
+							</p>
+							<span class="image fit"><img src="images/window2.png" alt="" /></span>
+
+							<h1>p5.js</h1>
+							<div class="12u$">
+								<span class="image fit">
+									<video src="Movie/p5.mov"  autoplay loop muted>
+										<video poster="p5.png" preload="metadata" >
+										<p>ご覧のブラウザではこのビデオは再生されません。</p>
+									</video>
+							<source src="p5.mov" type="video/mov">
+							</video>
+						</span>
+					</div>
+          <p>
+						ProcessingをJavascriptに移行した「p5.js」を用いたWebページを制作しました。サイン波を用いて、
+						波を打つような表現を目指しました。中央のピンク色のテキストは、背景要素としてp5.jsを使用するテスト用テキストです。
+					</p>
+					<a id="Sound"><h1>サウンドアートコンサート特設WEBサイトデザイン</h1></a>
+					<span class="image main2"><img src="images/soundart.png" alt="" /></span>
+					<p>
+						2017年に行われた、「サウンドアートコンサート」という大同大学の情報メディア学科メディアデザイン専攻の学生が主催する作品発表会の特設WEBサイトのデザインカンプを個人的に制作しました。
+						WEBサイトを見てくださった方に、コンサート当日の作品発表を楽しみにしていただけるよう、作品の詳細情報と画像を中心に紹介することを重点に置いたデザインにしました。
+						また、コンサートの紙のポスターで使用されていたロゴや黒を基調としたデザインを踏襲し、WEBとポスターで差異をなるべく無くしました。
+					</p>
+
+					</div>
+
+					<div id="page-top" class="page-top">
+					<span id="move-page-top" class="move-page-top">
+						<img src="images/arrow-up.svg" alt="">
+					</span>
+				</div>
+			</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; jisaki Kouhei. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html　lang="ja">
+	<head>
+		<title>Harada:Lab Grop Exhibition 01 -地崎滉平のポートフォリオ-</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+        <!-- Scripts -->
+            <script type="text/javascript"src="assets/js/jquery.min.js"></script>
+
+						<script>
+							$(document).ready(function() {
+  							var pagetop = $('.page-top');
+    					$(window).scroll(function () {
+       					if ($(this).scrollTop() > 100) {
+            	pagetop.fadeIn();
+       					} else {
+            	pagetop.fadeOut();
+            		}
+       			});
+       				pagetop.click(function () {
+           			$('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   						});
+							});
+						</script>
+
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+
+
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="title">地崎滉平 -Jisaki Kouhei-</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+
+				<!-- Menu -->
+						<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">Profile</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<h1>Harada:Lab Grop Exhibition 01(Web)</h1>
+							<span class="image main"><img src="images/exh01.png" alt="" /></span>
+							<p>2019年3月5日（火）〜3月10日（日）まで、市民ギャラリー矢田にて大学の研究室に配属された新4年生でグループ展示を行いました。各個人で3DCGやゲーム、GIFなどの展示を行い、私はWebGLのライブラリである「three.js」を用いたWebインタラクション作品を制作しました。TOPページ1作品＋ページ遷移後３作品の計４作品を制作。全ての作品にマウスでのインタラクションを実装し、動画などの埋め込みでは表現できないインタラクティブな作品にしました。TOPページには背景にsin波で上下する四角形のインタラクション作品を施し、展示にご来場してくださった方が目に留まりやすいようにしました。また、文字のフォントにはGoogleFontを使用し、サイトの世界観を演出しました。
+							</p>
+
+							<h2>作品詳細</h2>
+							<section class="tiles2">
+								<article class="style1">
+										<span class="image">
+											<img src="images/exh02.png" alt="" />
+											<p>Starry　Sky<br>2万個のパーティクルを用い、満天の星空を表現しました。
+												マウスを動かした時のカメラの動きを他2作品よりも大きくし、星空に入り込んだような感覚を表現しました。
+											</p>
+										</span>
+									</article>
+									<article class="style1">
+										<span class="image">
+											<img src="images/exh03.png" alt="" />
+											<p>Triangles<br>Cian、Magenta、Yellowの3色の三角形が回転する作品。
+												明度と透明度を調整し、色の重なりとキラキラした効果を追求しました。
+											</p>
+										</span>
+									</article>
+									<article class="style1">
+										<span class="image">
+											<img src="images/exh04.png" alt="" />
+											<p>Space<br>宇宙に広がる無数の粒子をイメージしました。
+												時間経過により粒子の位置と色がランダムに変化するようにし、インタラクティブに生成されていることを前面に表現しました。
+											</p>
+										</span>
+								</article>
+							</section>
+
+							<span class="image main"><img src="images/exh05.jpg" alt="" /></span>
+							<p>実際の展示での様子です。期間中は、子供からお年寄りまで幅広い世代の方にご来場いただくことが出来ました。
+							</p>
+
+							<h2>作品サイトURL</h2>
+							<p>
+								作品は<a href="harada_lab_ex/index.html" target="_blank">こちら</a>をご覧ください。
+							</p>
+
+							<h2>使用ソフト</h2>
+							<ul>
+								<li>Atom（テキストエディタ）</li>
+							</ul>
+
+					</div>
+
+					<div id="page-top" class="page-top">
+					<span id="move-page-top" class="move-page-top">
+						<img src="images/arrow-up.svg" alt="">
+					</span>
+				</div>
+			</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; jisaki Kouhei. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
+		</div>
+	</body>
+</html>

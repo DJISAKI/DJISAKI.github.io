@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+
+<html　lang="ja">
+	<head>
+		<title>一歩 -地崎滉平のポートフォリオ-</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+        <!-- Scripts -->
+            <script type="text/javascript"src="assets/js/jquery.min.js"></script>
+
+						<script>
+							$(document).ready(function() {
+  							var pagetop = $('.page-top');
+    					$(window).scroll(function () {
+       					if ($(this).scrollTop() > 100) {
+            	pagetop.fadeIn();
+       					} else {
+            	pagetop.fadeOut();
+            		}
+       			});
+       				pagetop.click(function () {
+           			$('body, html').animate({ scrollTop: 0 }, 500);
+              return false;
+   						});
+							});
+						</script>
+
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+
+
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="title">地崎滉平 -Jisaki Kouhei-</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+
+				<!-- Menu -->
+						<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">Profile</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<h1>一歩　(映像、音楽)</h1>
+							<span class="image main"><img src="images/ippo01.png" alt="" /></span>
+							<p>大学の実習課題にて、チームで実写のショートドラマを制作しました。撮影・録音・編集・BGM制作をチームで行い、
+								私は映像にて使用されるBGMやSE全てを担当・制作しました。また撮影では、録音やロケ先での出演者の手配なども担当
+								しました。以下では、担当した音楽制作について紹介します。
+							</p>
+
+							<h2>音楽</h2>
+							<section class="tiles3">
+								<article class="style1">
+										<span class="image">
+											<img src="images/ippo02.png" alt="" />
+										<p>監督を務めたメンバーの指示のもと、BGMやSEを制作しました。Logic Pro Xにインストールされている
+											Apple loopsというループ素材を主に使用し、カットやループなどの編集を加え制作しました。演者の声と音楽が被らない
+											よう、BGMに不要な低音域をイコライザでカットすることを重点的に制作しました。
+									</p>
+								</span>
+							</article>
+									<article class="style1">
+										<span class="image">
+											<img src="images/ippo03.png" alt="" />
+										<p>Apple loopsなどのループ素材以外にも、ドラムの打ち込みなども行いました。BGMよりも映像を引き立てるため、激しいハイハットのような
+											煌びやかな音は使用しないように心がけながら制作しました。
+										</p>
+									</span>
+								</article>
+							</section>
+
+							<h2>作品詳細</h2>
+							<div class="12u$">
+								<span class="image fit">
+									<video src="Movie/一歩.mov" controls muted/　>
+										<video poster="kuruma.jpg" preload="metadata" >
+										<p>ご覧のブラウザではこのビデオは再生されません。</p>
+								</video>
+									<source src="一歩.mp4" type="video/mov">
+					</span>
+				</div>
+
+							<h2>使用ソフト</h2>
+							<ul>
+								<li>Logic Pro X</li>
+							</ul>
+
+					</div>
+
+					<div id="page-top" class="page-top">
+					<span id="move-page-top" class="move-page-top">
+						<img src="images/arrow-up.svg" alt="">
+					</span>
+				</div>
+			</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; jisaki Kouhei. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
+		</div>
+	</body>
+</html>
