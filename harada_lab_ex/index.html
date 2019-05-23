@@ -1,0 +1,85 @@
+<!-- Special Thanks Tano Natsuno -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <title>WEB_Exhibition</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <script src="js/three.min.js"></script>
+  <script src="js/Projector.js"></script>
+  <script src="js/CanvasRenderer.js"></script>
+
+
+</head>
+<body>
+<!-- three.js表示する -->
+<div id="#canvas"></div>
+
+<!-- 全体を囲むwrap -->
+<div class="wrap">
+<!-- main-->
+  <div id="main">
+<!-- main_title-->
+    <div align="center">
+      <h1>WEB_Exhibition</h1>
+      <p> image click! </p>
+    </div>
+<!-- main-->
+    <div class="row">
+<!-- Shader_1 -->
+<div class="col-sm-4">
+      <a class="img_link" href="works_01.html">
+      <div class="figure">
+        <h3 class="works_title">Starry Sky</h3>
+        <img src="image/01.png" class="img-responsive">
+          <div class="imgcaption">
+          <p>2万個にも及ぶ、満点の星空をお楽しみください。</p>
+        </div>
+      </div>
+    </a>
+</div>
+<!-- Shader_2 -->
+<div class="col-sm-4">
+      <a class="img_link" href="works_02.html">
+      <div class="figure">
+        <h3 class="works_title">Triangles</h3>
+        <img src="image/03.png" class="img-responsive">
+          <div class="imgcaption">
+          <p>三角形が織りなす色の重なりをお楽しみください。</p>
+        </div>
+      </div>
+    </a>
+</div>
+<!-- Shader_3 -->
+<div class="col-sm-4">
+      <a class="img_link" href="works_03.html">
+      <div class="figure">
+        <h3 class="works_title">　Space</h3>
+        <img src="image/04.png" class="img-responsive">
+          <div class="imgcaption">
+          <p>時間経過で変化する色と粒子をお楽しみください。</p>
+        </div>
+      </div>
+    </a>
+</div>
+
+</div>
+<!-- main_end -->
+
+<!-- footer -->
+  <div id="footer">
+      <p class="footer_txt">©Jisaki Kohei</p>
+  </div>
+</div>
+<!-- wrap end -->
+<script src="js/myGL_00.js"></script><!-- threejsファイル読み込み -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
