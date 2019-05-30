@@ -26,8 +26,8 @@
 var mouseX = 0, mouseY = 0;
 　var windowHalfX = window.innerWidth / 2;
 　var windowHalfY = window.innerHeight / 2;
-　init();
-　animate();
+　//init();
+　//animate();
 
     function init() {
         var scene = new THREE.Scene();
@@ -136,11 +136,12 @@ var mouseX = 0, mouseY = 0;
         　  }
         　}
 
-        　function animate() {
+      //  　function animate() {
       //  requestAnimationFrame( animate );
-        webGLRenderer.setAnimationLoop(animate);
-        render();
-      }
+      //追記  webGLRenderer.setAnimationLoop(render);
+        //render();
+    //  }
+
 
 
         function render() {
@@ -153,7 +154,8 @@ var mouseX = 0, mouseY = 0;
 
 
           //  requestAnimationFrame(render);
-            webGLRenderer.setAnimationLoop(render);
+            　//webGLRenderer.setAnimationLoop(render);
+
 
             camera.lookAt( scene.position );
 
@@ -161,6 +163,9 @@ var mouseX = 0, mouseY = 0;
 
 
         }
+
+        webGLRenderer.setAnimationLoop(render);
+
     }
 
     window.onload = init;
