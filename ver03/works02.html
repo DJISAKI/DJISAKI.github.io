@@ -32,7 +32,7 @@ var mouseX = 0, mouseY = 0;
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         var webGLRenderer = new THREE.WebGLRenderer();
-        webGLRenderer.setClearColor(0x111166,1);
+        webGLRenderer.setClearColor(0x111144,1);
         webGLRenderer.setSize(window.innerWidth, window.innerHeight);
         webGLRenderer.vr.enabled = true;
         camera.position.x = 120;
@@ -83,7 +83,7 @@ var mouseX = 0, mouseY = 0;
                 sizeAttenuation: true
             });
             var range = 1000;
-            for (var i = 0; i < 1000; i++) {
+            for (var i = 0; i < 3000; i++) {
                 var particle = new THREE.Vector3(Math.random() * range - range / 2, Math.random() * range - range / 2, Math.random() * range - range / 2);
                 geom.vertices.push(particle);
                 var color = new THREE.Color(0xffffff);
