@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <title>Starry Sky</title>
+  <link href="css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <script type="text/javascript" src="js/three.min.js"></script>
+  <script type="text/javascript" src="js/DeviceOrientationControls.js"></script>
+  <!--以下のJS追加-->
+  <script type="text/javascript" src="js/WebVR.js"></script>
+  <script type="text/javascript" src="js/webvr-polyfill.js"></script>
+
+
+</head>
+<body>
+<div class="wrap">
+
+<!-- back
+<a href="index.html">
+  <button type="button" class="btn btn-dark">
+  <h2 class ="back">←</h2>
+  </button>
+</a> -->
+
+<!-- three.jsを表示する -->
+<div id="WebGL-output">
+</div>
+<!-- JavascriptにThree.jsを走らせる -->
+<script type="text/javascript">
+
+var mouseX = 0, mouseY = 0;
+　var windowHalfX = window.innerWidth / 2;
+　var windowHalfY = window.innerHeight / 2;
+　init();
+　animate();
+
+    function init() {
+      //ポリフィル追加。
+        const polyfill = new WebVRPolyfill();
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setClearColor(0x111166,1);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.vr.enabled = true;
+        camera.position.x = 120;
+        camera.position.y = 100;
+        camera.position.z = 0;
+        document.getElementById("WebGL-output").appendChild(renderer.domElement).appendChild(WEBVR.createButton(renderer));
+        // WebVRの開始ボタンをDOMに追加
+        document.addEventListener('mousemove', onDocumentMouseMove, false);
+        document.addEventListener('touchstart', onDocumentTouchStart, false);
+        document.addEventListener('touchmove', onDocumentMouseMove, false);
+
+
+        window.addEventListener('resize', onWindowResize, false );
+        var cloud;
+        var controls = new function () {
+            this.redraw = function () {
+                if (scene.getObjectByName("particles")) {
+                    scene.remove(scene.getObjectByName("particles"));
+                }
+                createParticles(controls.size, controls.transparent, controls.opacity,controls.sizeAttenuation);
+            };
+        };
+        controls.redraw();
+
+        //追記 ジャイロ
+        function setOrientationControls(e) {
+          if (!e.alpha) {
+            return;
+          }
+          controls2 = new THREE.DeviceOrientationControls(camera, true);
+          controls2.connect();
+          controls2.update();
+          window.removeEventListener('deviceorientation', setOrientationControls, true);
+        }
+        window.addEventListener('deviceorientation', setOrientationControls, true);
+
+
+        render();
+        function onWindowResize() {
+          windowHalfX = window.innerWidth / 2;
+          windowHalfY = window.innerHeight / 2;
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          //webGLRenderer.setSize( window.innerWidth, window.innerHeight );
+
+        }
+        function createParticles(size, transparent, opacity, vertexColors, sizeAttenuation, ) {
+            var textureLoader = new THREE.TextureLoader();
+            var texture = textureLoader.load("image/00.png");
+            var geom = new THREE.Geometry();
+            var material = new THREE.PointsMaterial({
+                size: 10,
+                transparent: true,
+                opacity: true,
+                depthWrite: false,
+                map: texture,
+                blending: THREE.AdditiveBlending,
+                sizeAttenuation: true
+            });
+            var range = 1000;
+            for (var i = 0; i < 20000; i++) {
+                var particle = new THREE.Vector3(Math.random() * range - range / 2, Math.random() * range - range / 2, Math.random() * range - range / 2);
+                geom.vertices.push(particle);
+                var color = new THREE.Color(0xffffff);
+                geom.colors.push(color);
+            }
+            cloud = new THREE.Points(geom, material);
+            cloud.name = "particles";
+            scene.add(cloud);
+        }
+        var step = 0;
+
+        //mouse Event関連
+        　function onWindowResize() {
+        　  windowHalfX = window.innerWidth / 2;
+        　  windowHalfY = window.innerHeight / 2;
+        　  camera.aspect = window.innerWidth / window.innerHeight;
+        　  camera.updateProjectionMatrix();
+        　  renderer.setSize( window.innerWidth, window.innerHeight);
+
+        　}
+        　function onDocumentMouseMove(event) {
+        　  mouseX = event.clientX - windowHalfX;
+        　  mouseY = event.clientY - windowHalfY;
+        　}
+        　function onDocumentTouchStart(event){
+        　  if (event.touches.length === 1){
+        　    event.preventDefault();
+            mouseX = event.touches[0].pageX - windowHalfX;
+            mouseY = event.touches[0].pageY - windowHalfY;
+        　　}
+        　}
+        　function onDocumentTouchMove(event){
+        　  if (event.touches.length === 1){
+        　    event.preventDefault();
+        　    mouseX = event.touches[0].pageX - windowHalfX;
+        　    mouseY = event.touches[0].pageY - windowHalfY;
+        　  }
+        　}
+
+//WebVRのためにsetAnimationLoopに変更。
+        　function animate() {
+          renderer.setAnimationLoop( render );
+        }
+
+
+        function render() {
+                step += 0.003;
+                cloud.rotation.x = step;
+                cloud.rotation.z = step;
+
+                camera.position.x += (mouseX - camera.position.x) * 0.01;
+                camera.position.y += (-mouseY - camera.position.y) * 0.08;
+
+            //requestAnimationFrame(render);
+
+            //WebVRのためにsetAnimationLoopに変更。
+            renderer.setAnimationLoop(render);
+
+            camera.lookAt( scene.position );
+
+            renderer.render(scene, camera);
+
+        }
+
+    }
+
+    window.onload = init;
+</script>
+</div>
+<!-- wrap end -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

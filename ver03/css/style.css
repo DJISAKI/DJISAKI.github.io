@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* 全体 */
+body{
+  overflow: hidden;
+  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3',
+  Meiryo, メイリオ, 'MS PGothic', arial, helvetica, sans-serif;
+  color: #FCFCFC;
+  letter-spacing: 0.2em;
+  background-color: #000000;/*threejsが表示されなかった時の背景*/
+}
+/* h1,text */
+
+h1{
+    font-size: 2.8em;
+}
+p{
+    font-size: 12pt;
+}
+#main {
+    position: absolute; /* important!!!!! */
+    top: 20%; /* important!!!!! */
+    font-family: 'Electrolize', sans-serif;
+}
+.col-sm-4{
+    padding: 5%;
+}
+/* images */
+.figure:hover .imgcaption {
+    opacity: 1;
+}
+.imgcaption {
+    position: absolute;
+    top:20%;      /* 画像に合わせる */
+    left: 15%;   /* 画像に合わせる */
+    z-index: 2;
+    width: 70%;   /* 画像に合わせる */
+    height: 60%;  /* 画像に合わせる */
+    background: rgba(0,0,0,.6);
+    -webkit-transition: .3s;
+    transition: .3s;
+    opacity: 0;
+    z-index: 2;
+}
+/* title */
+.works_title {
+    z-index: 4;
+    position: absolute;
+    top: 40%;
+    left: 32%; /* 画像に合わせる */
+}
+/* caption */
+.imgcaption > p{
+    margin-top: 30%;
+    padding: 20px;
+    text-align: center;
+    z-index: 3;
+}
+/* link*/
+.col-sm-4 > a
+{
+    color: #ffffff;
+}
+/* toppage_btn*/
+.btn{
+     transition: .3s;
+     width:　15%;
+     height: 10%;
+     color: #fcfcfc;
+     background-color: transparent;
+     position: absolute;
+     font-size: 2rem;
+}
+.btn:hover{
+     background-color: #ffffff;
+}
+.back{
+  margin-top: 30%;
+}
+/* footer */
+#footer {
+    text-align: center;
+    height: 100px;
+}
+.footer_txt{
+    font-size: 0.5rem;
+}
