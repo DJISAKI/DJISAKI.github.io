@@ -1,6 +1,3 @@
-/**
- * @author Shimeji Ozaki
- */
 
 export default class Scroller {
 
@@ -21,8 +18,6 @@ export default class Scroller {
 			if(listener.toggle && top < 0){
 				if(top < 0){
 
-					// "camMoving"フラグが一度"trueになると"
-					// コールバックのタイミングで"camMobingTimeを0に戻す"
 					window.camMoving = true;
 	      	window.camMoviingTime = 0;
 

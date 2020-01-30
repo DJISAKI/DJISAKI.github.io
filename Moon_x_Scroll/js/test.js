@@ -6,7 +6,6 @@ import * as THREE from "../libs/three-js/build/three.module.js";
 // import Stats      from "../libs/three-js/modules/jsm/libs/stats.module.js";
 import Scroller   from "./scroller.js";
 
-console.log("テストだよ!!");
 
 const WINDOW_WIDTH  = window.innerWidth;
 const WINDOW_HEIGHT = window.innerHeight;
@@ -23,10 +22,9 @@ function init(){
 
 	// Camera
 	camera = new THREE.PerspectiveCamera(50, WINDOW_ASPECT, 1, 1000);
-	// camera.position.set(0, 0, 600);
 	camera.position.x = 0;
 	camera.position.y = 0;
-	// camera.position.z = 600;
+	camera.position.z = 0;
 
 	// Scene
 	scene = new THREE.Scene();
@@ -38,25 +36,11 @@ function init(){
 	window.CamFirst = new THREE.Vector3(0,0,0);  //開始位置
 	window.CamEnd = new THREE.Vector3(0,0,0);  //終了位置
 
-	// // Light
 
-	// let ambLight = new THREE.AmbientLight(0x333333);
-	// scene.add(ambLight);
-	//
-	// let dirLight = new THREE.DirectionalLight(0xffffff, 1);
-	// dirLight.position.set(5,3,5);
-	// scene.add(dirLight);
-	//
-
-	// // Texture
-
-	// let txLoader        = new THREE.TextureLoader();
-	// let normalMap       = txLoader.load("./textures/tx_moon_1024x512.png");
-	// let displacementMap = txLoader.load("./textures/dm_moon_1024x512.png");
 
 	// Geometry
 	let geometry = new THREE.Geometry();
-		for ( i = 0; i< 2000; i++) {
+		for ( i = 0; i< 20000; i++) {
 			let vertex = new THREE.Vector3();
 			vertex.x = Math.random() * 2000 - 100;
 			vertex.y = Math.random() * 2000 - 1000;
@@ -85,21 +69,6 @@ function init(){
 		}
 
 
-	// Material
-	// let material = new THREE.MeshPhongMaterial({
-	// 	color:0xffffff,
-	// 	map: normalMap,
-	// 	displacementMap: displacementMap,
-	// 	displacementScale: 5,
-	// 	displacementBias: 0.5
-	// });
-
-	// Moon
-	// moon = new THREE.Mesh(geometry, material);
-	// particles.rX = 0;
-	// particles.rY = 0;
-	// particles.rZ = 0;
-	// scene.add(moon);
 
 	// Renderer
 	renderer = new THREE.WebGLRenderer({antialias: true});
@@ -113,53 +82,44 @@ function init(){
 	// Resize
 	window.addEventListener("resize", onWindowResize, false);
 
-	//==========
-	// このあたりから参考にしてください
 
 	// Scroller
 	let scroller = new Scroller();
 	window.onscroll = (e)=>{scroller.onScroll(e);};
 
 	scroller.addEventListener("boxA", ()=>{
-		console.log("boxAだよ!!");
 		window.CamEnd = new THREE.Vector3(0,0,700);  //終了位置
 	});
 
 	scroller.addEventListener("boxB", ()=>{
-		console.log("boxBよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,600);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,1400);  //終了位置
 	});
 
 	scroller.addEventListener("boxC", ()=>{
-		console.log("boxCよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,500);  //終了位置
+		// console.log("boxCよ!!");
+		window.CamEnd = new THREE.Vector3(0,0,2100);  //終了位置
 	});
 
 	scroller.addEventListener("boxD", ()=>{
-		console.log("boxDよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,400);  //終了位置
+		// console.log("boxDよ!!");
+		window.CamEnd = new THREE.Vector3(0,0,2800);  //終了位置
 	});
 
 	scroller.addEventListener("boxE", ()=>{
-		console.log("boxEよ!!");
+		// console.log("boxEよ!!");
 		window.CamEnd = new THREE.Vector3(0,0,300);  //終了位置
 	});
-	
-	//
-	// scroller.addEventListener("boxF", ()=>{
-	// 	console.log("boxFよ!!");
-	// 	window.CamEnd = new THREE.Vector3(0,0,200);  //終了位置
-	// });
-	//
-	// scroller.addEventListener("boxG", ()=>{
-	// 	console.log("boxGよ!!");
-	// 	window.CamEnd = new THREE.Vector3(0,0,100);  //終了位置
-	// });
-	//
-	// scroller.addEventListener("boxH", ()=>{
-	// 	console.log("boxHよ!!");
-	// 	window.CamEnd = new THREE.Vector3(0,0,90);  //終了位置
-	// });
+
+
+	scroller.addEventListener("boxF", ()=>{
+		// console.log("boxFよ!!");
+		window.CamEnd = new THREE.Vector3(0,0,200);  //終了位置
+	});
+
+	scroller.addEventListener("boxG", ()=>{
+		// console.log("boxGよ!!");
+		window.CamEnd = new THREE.Vector3(0,0,100);  //終了位置
+	});
 
 }
 
@@ -175,15 +135,6 @@ function onWindowResize(){
 }
 
 function animate(){
-
-	// Moon
-	// moon.rotation.x += moon.rX;
-	// moon.rotation.y += moon.rY;
-	// moon.rotation.z += moon.rZ;
-
-
-	// Renderer, Animation
-	// renderer.render(scene, camera);
 
 	requestAnimationFrame(animate);
 	render();
@@ -203,16 +154,13 @@ function render() {
 		 materials[i].color.setHSL( h, color[1], color[2] );
 	 }
 
-	 // camera.position.z = camera.pZ;
 
 	 if(window.camMoving){
 
-			//すごく単純に、50フレーム（1秒弱）でカメラが移動しきる感じにしてあります。
 	　　if(window.camMoviingTime < 50){
 
-					window.camMoviingTime++;  //経過フレーム数
+					window.camMoviingTime++;
 
-					//中間地点の入れ物を作ります。
 					const movingCam = window.CamFirst.lerp(window.CamEnd , window.camMoviingTime * 0.002 )
 
 					camera.position.copy(movingCam);
