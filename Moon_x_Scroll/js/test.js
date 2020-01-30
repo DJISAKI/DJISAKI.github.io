@@ -40,7 +40,7 @@ function init(){
 
 	// Geometry
 	let geometry = new THREE.Geometry();
-		for ( i = 0; i< 2000; i++) {
+		for ( i = 0; i< 200; i++) {
 			let vertex = new THREE.Vector3();
 			vertex.x = Math.random() * 2000 - 1000;
 			vertex.y = Math.random() * 2000 - 1000;
@@ -92,7 +92,7 @@ function init(){
 	});
 
 	scroller.addEventListener("boxB", ()=>{
-		window.CamEnd = new THREE.Vector3(0,0,400);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,200,400);  //終了位置
 	});
 
 	scroller.addEventListener("boxC", ()=>{
