@@ -40,9 +40,9 @@ function init(){
 
 	// Geometry
 	let geometry = new THREE.Geometry();
-		for ( i = 0; i< 20000; i++) {
+		for ( i = 0; i< 2000; i++) {
 			let vertex = new THREE.Vector3();
-			vertex.x = Math.random() * 2000 - 100;
+			vertex.x = Math.random() * 2000 - 1000;
 			vertex.y = Math.random() * 2000 - 1000;
 			vertex.z = Math.random() * 2000 - 1000;
 			geometry.vertices.push ( vertex );
@@ -88,37 +88,37 @@ function init(){
 	window.onscroll = (e)=>{scroller.onScroll(e);};
 
 	scroller.addEventListener("boxA", ()=>{
-		window.CamEnd = new THREE.Vector3(0,0,700);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,200);  //終了位置
 	});
 
 	scroller.addEventListener("boxB", ()=>{
-		window.CamEnd = new THREE.Vector3(0,0,1400);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,400);  //終了位置
 	});
 
 	scroller.addEventListener("boxC", ()=>{
 		// console.log("boxCよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,2100);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,600);  //終了位置
 	});
 
 	scroller.addEventListener("boxD", ()=>{
 		// console.log("boxDよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,2800);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,800);  //終了位置
 	});
 
 	scroller.addEventListener("boxE", ()=>{
 		// console.log("boxEよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,300);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,1000);  //終了位置
 	});
 
 
 	scroller.addEventListener("boxF", ()=>{
 		// console.log("boxFよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,200);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,1200);  //終了位置
 	});
 
 	scroller.addEventListener("boxG", ()=>{
 		// console.log("boxGよ!!");
-		window.CamEnd = new THREE.Vector3(0,0,100);  //終了位置
+		window.CamEnd = new THREE.Vector3(0,0,1400);  //終了位置
 	});
 
 }
