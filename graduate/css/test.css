@@ -79,7 +79,7 @@ h1{
 	text-align: center;
 	display: block;
 	font-size: 100px;
-font-family: 'Yantramanav', sans-serif;
+	font-family: 'Red Hat Display', sans-serif;
 }
 
 h2 {
@@ -87,25 +87,27 @@ h2 {
 	display: block;
 	font-size: 70px;
 	margin: 0;
-font-family: 'Yantramanav', sans-serif;
+	font-family: 'Red Hat Display', sans-serif;
 }
 
 h3{
 	margin: 0;
 	font-size: 40px;
 	line-height: 1;
+	font-family: 'Red Hat Display', sans-serif;
 }
 
 h4{
 	margin: 0;
 	font-size: 25px;
-font-family: 'Yantramanav', sans-serif;
+	font-family: 'Noto Serif JP', sans-serif;
 	padding-top: 16px;
 	padding-left: 16px;
 	line-height: 1;
 }
 
 p,dl,dt,dd{
+	font-family: 'Noto Serif JP', sans-serif;
 	display: block;
 	font-size: 19px;
 	text-align: center;
@@ -262,6 +264,7 @@ dl,dt,dd{
   text-decoration: none;
 	color: #ffffff;
 	font-size: 15px;
+	font-family: 'Red Hat Display', sans-serif;
 }
 #boxA a span {
   position: absolute;
@@ -304,6 +307,9 @@ dl,dt,dd{
   }
 }
 
+#boxB h2{
+	font-family: 'Red Hat Display', sans-serif;
+}
 #boxB p{
 	margin: 0 100px;
 	line-height: 3em;
@@ -381,7 +387,7 @@ height: 200vh;
   letter-spacing: .1em;
 	text-align: left;
 	margin: 0;
-	font-family: 'Yantramanav', sans-serif;
+	font-family: 'Red Hat Display', sans-serif;
 }
 
 .footer__main__text{
